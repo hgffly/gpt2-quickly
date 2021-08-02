@@ -61,7 +61,7 @@ def split_data(
 @click.option('--n_processes', default=1, help='Number of processes.')
 def preprocess(n_processes):
     print(f'reading {configs.data.raw}')
-    with open(configs.data.raw, 'r') as f:
+    with open(configs.data.raw, 'r', encoding="utf8", errors='ignore') as f:
         data = f.read().replace('  ', ' ').replace('\n\n', '\n')
         print(f"total words: {len(data)}")
 

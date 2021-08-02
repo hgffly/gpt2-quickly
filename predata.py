@@ -123,7 +123,7 @@ def preprocess(n_processes):
     block_size = configs.model.max_length
 
     print(f'reading {configs.data.raw}')
-    with open(configs.data.raw, 'r') as f:
+    with open(configs.data.raw, 'r', encoding="utf8", errors='ignore') as f:
         data = f.read().replace('  ', ' ').replace('\n\n', '\n')
         print(f"total words: {len(data)}")
 
